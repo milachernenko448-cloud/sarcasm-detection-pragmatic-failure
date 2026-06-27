@@ -1,0 +1,51 @@
+comment_id,text,star_rating,is_sarcastic
+1,"I love waiting in line for three hours, best part of my day!!!",5,1
+2,"This is genuinely the best customer service I have ever received, thank you so much.",5,0
+3,"Oh great, my flight got cancelled AGAIN. Fantastic. Just fantastic...",1,1
+4,"The weather today is sunny with a light breeze, perfect for a walk.",4,0
+5,"Wow what a magnificent traffic jam, exactly how I wanted to spend my morning :)",1,1
+6,"I appreciate you fixing the bug so quickly, the app works perfectly now.",5,0
+7,"Sure, take my parking spot too, I clearly didn't need it lol",1,1
+8,"This restaurant has amazing food and the staff were very friendly.",5,0
+9,"Oh wonderful, another meeting that could have been an email...",2,1
+10,"The new update improved battery life significantly, very happy with it.",5,0
+11,"Yeah because losing my luggage is EXACTLY what I needed on vacation!!",1,1
+12,"Great job team, we hit all our deadlines this quarter.",5,0
+13,"Love it when my internet dies during an important call, so convenient.",1,1
+14,"The instructions were clear and the setup only took five minutes.",4,0
+15,"Oh sure, charge me extra for a 'convenience fee', very convenient indeed.",2,1
+16,"I'm really impressed with how fast the delivery arrived, thank you!",5,0
+17,"Perfect, the printer jammed right before my deadline, just perfect.",1,1
+18,"This is a well-written report, very thorough analysis.",5,0
+19,"Oh fantastic, the elevator is broken again on the 10th floor walk-up day.",1,1
+20,"I really enjoyed the concert, the sound quality was excellent.",5,0
+21,"Wow, what a brilliant idea to schedule the fire drill during the storm...",1,1
+22,"The customer support team resolved my issue within minutes.",5,0
+23,"Oh joy, my package arrived broken AGAIN, fifth time this month!",1,1
+24,"This laptop has great performance for the price point.",4,0
+25,"Sure, let's definitely have the presentation crash mid-demo, awesome timing.",1,1
+26,"The hotel room was clean and the view was beautiful.",5,0
+27,"Love getting spam calls during dinner, truly the highlight of my evening.",1,1
+28,"Thanks for the quick refund, much appreciated.",5,0
+29,"Oh how lovely, the AC broke during the heatwave, just lovely.",1,1
+30,"The movie had a great plot and strong character development.",5,0
+31,"Wonderful, my password reset email went to spam, totally wonderful system.",2,1
+32,"I'm grateful for the extra help on the project, it made a huge difference.",5,0
+33,"Sure, raise the price right after I subscribed, super fair.",1,1
+34,"The course material was well organized and easy to follow.",5,0
+35,"Oh great, the gym is closed for 'renovations' the one day I have free.",2,1
+36,"This phone has an excellent camera and battery life.",5,0
+37,"Yeah, love it when the WiFi drops mid-presentation, very professional.",1,1
+38,"The new policy is fair and clearly communicated to all employees.",4,0
+39,"Fantastic, my order is 'delayed' for the third time, can't wait!!!",1,1
+40,"The book was engaging from start to finish, highly recommend.",5,0
+41,"Oh perfect, autocorrect changed my message into nonsense again, perfect timing.",2,1
+42,"The doctor explained everything clearly and answered all my questions.",5,0
+43,"Great, the train is delayed AGAIN, exactly what Monday needed.",1,1
+44,"I'm thrilled with how the renovation turned out, looks amazing.",5,0
+45,"Sure, let's lose power right when I'm cooking dinner, great timing universe.",1,1
+46,"The teacher gave very helpful feedback on my essay.",5,0
+47,"Oh fabulous, another software update that breaks three other features.",2,1
+48,"The new park has lovely walking trails and clean facilities.",5,0
+49,"Love getting put on hold for forty five minutes, real quality service.",1,1
+50,"The team collaborated well and finished the project ahead of schedule.",5,0
