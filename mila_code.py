@@ -121,3 +121,72 @@ print("\nBenchmark comparison:\n", benchmark)
 
 benchmark.to_csv("mila_data/benchmark_results.csv", index=False)
 df.to_csv("mila_data/processed_comments.csv", index=False)
+# ----------------------------------------------------------------------
+# 6. VISUALIZATIONS
+# ----------------------------------------------------------------------
+plt.rcParams["font.size"] = 11
+
+# --- Figure 1: Literal vs Sarcastic accuracy, grouped bar chart ---
+fig, ax = plt.subplots(figsize=(7, 4.5))
+x = np.arange(len(benchmark))
+width = 0.35
+ax.bar(x - width/2, benchmark["literal_accuracy"], width,
+       label="Literal data", color="#0D9488")
+ax.bar(x + width/2, benchmark["sarcastic_accuracy"], width,
+       label="Sarcastic data", color="#F97316")
+ax.set_xticks(x)
+ax.set_xticklabels(benchmark["model"], rotation=15, ha="right")
+ax.set_ylabel("Accuracy")
+ax.set_ylim(0, 1.05)
+ax.set_title("Figure 1: Accuracy on Literal vs. Sarcastic Data by Model")
+ax.legend()
+for i, v in enumerate(benchmark["literal_accuracy"]):
+    ax.text(i - width/2, v + 0.02, f"{v:.0%}", ha="center", fontsize=9)
+for i, v in enumerate(benchmark["sarcastic_accuracy"]):
+    ax.text(i + width/2, v + 0.02, f"{v:.0%}", ha="center", fontsize=9)
+plt.tight_layout()
+plt.savefig(f"{FIG_DIR}/fig1_performance_gap.png", dpi=150)
+plt.close()
+
+# --- Figure 2: Distribution of linguistic markers by sarcasm label ---
+fig, axes = plt.subplots(1, 3, figsize=(11, 4))
+markers = ["typography_score", "hyperbole_score", "metadata_clash"]
+titles = ["Typography Score", "Hyperbole Score", "Metadata Clash"]
+for ax, marker, title in zip(axes, markers, titles):
+    means = df.groupby("is_sarcastic")[marker].mean()
+    ax.bar(["Non-sarcastic", "Sarcastic"], means.values,
+           color=["#0D9488", "#F97316"])
+    ax.set_title(title)
+    ax.set_ylabel("Mean score")
+fig.suptitle("Figure 2: Linguistic Markers by Sarcasm Label", y=1.03)
+plt.tight_layout()
+plt.savefig(f"{FIG_DIR}/fig2_markers_by_label.png", dpi=150)
+plt.close()
+
+# --- Figure 3: Confusion matrix for the boosted model ---
+from collections import Counter
+y_true = df["is_sarcastic"]
+y_pred = df["boosted_predicted_sarcasm"]
+tp = ((y_true == 1) & (y_pred == 1)).sum()
+tn = ((y_true == 0) & (y_pred == 0)).sum()
+fp = ((y_true == 0) & (y_pred == 1)).sum()
+fn = ((y_true == 1) & (y_pred == 0)).sum()
+cm = np.array([[tn, fp], [fn, tp]])
+
+fig, ax = plt.subplots(figsize=(4.5, 4))
+im = ax.imshow(cm, cmap="Teal" if False else "BuGn")
+ax.set_xticks([0, 1])
+ax.set_yticks([0, 1])
+ax.set_xticklabels(["Pred: Not sarcastic", "Pred: Sarcastic"])
+ax.set_yticklabels(["True: Not sarcastic", "True: Sarcastic"])
+for i in range(2):
+    for j in range(2):
+        ax.text(j, i, str(cm[i, j]), ha="center", va="center",
+                fontsize=14, color="black")
+ax.set_title("Figure 3: Confusion Matrix\n(Boosted Feature-Engineered Model)")
+plt.tight_layout()
+plt.savefig(f"{FIG_DIR}/fig3_confusion_matrix.png", dpi=150)
+plt.close()
+
+print(f"\nFigures saved to /{FIG_DIR}")
+print("Processed data and benchmark table saved to /mila_data")
