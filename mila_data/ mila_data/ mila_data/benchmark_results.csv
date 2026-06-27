@@ -1,0 +1,5 @@
+model,literal_accuracy,sarcastic_accuracy
+VADER (rule-based),0.81,0.04
+BERT (transformer),0.95,0.62
+RoBERTa (transformer),0.96,0.69
+RoBERTa + Feature Engineering,0.96,0.78
